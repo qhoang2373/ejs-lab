@@ -57,6 +57,7 @@ const RESTAURANT = {
 
   app.get('/menu', (req, res) => {
     res.render('menu.ejs', { RESTAURANT });  
+  
   });
 
 
