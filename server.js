@@ -51,7 +51,9 @@ const RESTAURANT = {
   }
   
   app.get('/', (req, res) => {
-    res.render('home.ejs', { RESTAURANT });
+    res.render('home.ejs', { 
+        msg: 'Welcome to the Green Byte Bistro'
+        ,RESTAURANT });
   });
   
 
@@ -70,7 +72,6 @@ const RESTAURANT = {
 app.get('/menu/:category', (req, res) => {
     const category = req.params.category;
     const menuItems = RESTAURANT.menu.filter(item => item.category === category);
-
     res.render('category.ejs', {menuItems, RESTAURANT});
 })
   
