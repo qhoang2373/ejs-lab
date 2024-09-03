@@ -54,9 +54,11 @@ const RESTAURANT = {
     res.render('home.ejs', { RESTAURANT });
   });
   
+
   app.get('/menu', (req, res) => {
     res.render('menu.ejs', { RESTAURANT });  
   });
+
 
   app.get('/menu/:category', (req, res) => {
     const category = req.params.category;
