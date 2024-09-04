@@ -5,10 +5,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">   
 
   <title>Menu</title>
+
+  <!-- again line 10 is used to help render a message to appear in the nav bar -->
   <%- include('./partials/nav') %>
 </head>
+
 <body>
   <h1><%= RESTAURANT.name %> - Menu</h1>
+
+<!-- line 18-26 is a forEach loop to loop through the menu's name, price, rating and details-->
 
   <ul>
     <% RESTAURANT.menu.forEach(item => { %>  <li>
@@ -19,6 +24,7 @@
       </li>
     <% }); %>
   </ul>
+
 </body>
 </html>
 

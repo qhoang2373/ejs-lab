@@ -7,9 +7,13 @@
 </head>
 
 <%- include('./partials/nav') %>
+<!-- line above is used for the nav.ejs to appear in the nav bar when looking at webpage -->
 
 <body>
     <h1><%= msg %></h1>
+    <!-- msg scriplet helps render the message types from server.js -->
+     
+     <!-- lines 16 - 24 is useed to loop through the restaurant object in server.js -->
     <p> <%= RESTAURANT.name %></p>
     <p> <%= RESTAURANT.address %></p>
     <p> <%= RESTAURANT.phone %></p>

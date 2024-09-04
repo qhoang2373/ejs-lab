@@ -50,13 +50,14 @@ const RESTAURANT = {
     ]
   }
   
+//   this route is used to display whatever message you want, in this case, "Welcome to the Green Byte Bistor in the home.ejs"
   app.get('/', (req, res) => {
     res.render('home.ejs', { 
         msg: 'Welcome to the Green Byte Bistro'
         ,RESTAURANT });
   });
   
-
+//   this route is used to display on your homepage the RESTAURANT's array/object items when clicking on menu in the homepage"
   app.get('/menu', (req, res) => {
     res.render('menu.ejs', { RESTAURANT });  
   });
@@ -69,6 +70,7 @@ const RESTAURANT = {
 //     res.render('category.ejs', { menuItems, RESTAURANT });
 //   });
 
+// this route is used to display items in the 3 different categories of Mains, Desserts and Sides when on the homepage
 app.get('/menu/:category', (req, res) => {
     const category = req.params.category;
     const menuItems = RESTAURANT.menu.filter(item => item.category === category);
