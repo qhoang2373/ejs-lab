@@ -63,19 +63,14 @@ const RESTAURANT = {
   });
 
 
-//   app.get('/menu/:category', (req, res) => {
-//     const category = req.params.category;
-//     const menuItems = RESTAURANT.menu.filter(item => item.category === category);
-//     const categoryName = category.charAt(0).toUpperCase() + category.slice(1);
-//     res.render('category.ejs', { menuItems, RESTAURANT });
-//   });
 
 // this route is used to display items in the 3 different categories of Mains, Desserts and Sides when on the homepage
 app.get('/menu/:category', (req, res) => {
     const category = req.params.category;
     const menuItems = RESTAURANT.menu.filter(item => item.category === category);
-    res.render('category.ejs', {menuItems, RESTAURANT});
-})
+    const categoryName = category.charAt(0).toUpperCase() + category.slice(1);
+    res.render('category.ejs', {menuItems, categoryName, RESTAURANT});
+});
   
   app.listen(3000);
 
